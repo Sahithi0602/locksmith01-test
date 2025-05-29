@@ -20,8 +20,7 @@ jobs:
 
       - run: npm install -g aws-cdk@2
 
-      - run: npm ci
-
+      - run: npm  install
       - run: npm run build --workspaces
 
       - uses: aws-actions/configure-aws-credentials@v4
