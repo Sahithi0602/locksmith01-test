@@ -20,12 +20,17 @@ jobs:
 
       - run: npm install -g aws-cdk@2
 
-      - run: npm  install
-      - run: npm run build --workspaces
+      - run: npm install
+        working-directory: infra
+
+      - run: npm run build
+        working-directory: infra
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::633087887417:role/GitHubOIDC
           aws-region: us-east-1
 
-      - run: cd infra && cdk deploy --all --require-approval never
+      - run: cdk deploy --all --require-approval never
+        working-directory: infra
+
