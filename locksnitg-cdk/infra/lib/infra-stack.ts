@@ -12,7 +12,7 @@ export class InfraStack extends cdk.Stack {
     const listKeysFn = new lambda.Function(this, 'ListKeysFunction', {
       runtime: lambda.Runtime.NODEJS_20_X,
       handler: 'index.handler',
-      code: lambda.Code.fromAsset('lambda'), // assumes your handler is in /lambda/index.js
+      code: lambda.Code.fromAsset('../lambda'), // assumes your handler is in /lambda/index.js
     });
 
     // API Gateway to invoke Lambda
