@@ -1,0 +1,19 @@
+# Ignore node_modules and build artifacts
+node_modules/
+infra/node_modules/
+locksnitg-cdk/lambda/node_modules/
+
+# Ignore logs and lock files
+*.log
+package-lock.json
+
+# Ignore compiled JS and type declarations
+infra/lib/*.js
+infra/lib/*.d.ts
+
+# Ignore CDK output and test folders
+infra/bin/
+infra/test/
+
+# Ignore response data files
+response.json
